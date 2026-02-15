@@ -64,13 +64,16 @@
 
   .glass-card {
     background: rgba(47, 27, 24, 0.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
   }
   
   .glass-card:hover {
-    @apply border-primary/30;
+    border-color: rgba(242, 51, 13, 0.3);
+    box-shadow: 0 0 15px rgba(242, 51, 13, 0.1);
   }
 
   /* Utility for hiding scrollbar but keeping functionality */

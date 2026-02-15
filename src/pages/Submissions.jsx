@@ -44,7 +44,7 @@ const Submissions = () => {
   };
 
   return (
-    <div className="p-6 lg:p-8 max-w-full space-y-8">
+    <div className="p-4 lg:p-8 max-w-full space-y-6 lg:space-y-8">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -212,18 +212,18 @@ const Submissions = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center justify-between pt-6 border-t border-white/10 mt-8">
-                <div className="flex items-center gap-2 text-yellow-500/80 bg-yellow-500/10 px-3 py-2 rounded-lg border border-yellow-500/20">
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-6 pt-6 border-t border-white/10 mt-8">
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-yellow-500/80 bg-yellow-500/10 px-3 py-2 rounded-lg border border-yellow-500/20 w-full sm:w-auto">
                   <span className="material-icons text-lg">warning</span>
                   <p className="text-xs font-medium">
                     Editable until submission deadline.
                   </p>
                 </div>
-                <div className="flex gap-4">
-                   <button type="button" className="px-6 py-2 rounded-lg border border-white/10 hover:bg-white/5 text-white transition-all font-medium">
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                   <button type="button" className="w-full sm:w-auto px-6 py-3 sm:py-2 rounded-lg border border-white/10 hover:bg-white/5 text-white transition-all font-medium justify-center flex">
                     Save Draft
                   </button>
-                  <button type="submit" className="px-6 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg shadow-neon hover:shadow-neon-hover transition-all flex items-center gap-2 font-bold">
+                  <button type="submit" className="w-full sm:w-auto px-6 py-3 sm:py-2 bg-primary hover:bg-primary-dark text-white rounded-lg shadow-neon hover:shadow-neon-hover transition-all flex items-center justify-center gap-2 font-bold">
                     <span className="material-icons">rocket_launch</span>
                     Submit Project
                   </button>
