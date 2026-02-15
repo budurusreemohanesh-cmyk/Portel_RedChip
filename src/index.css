@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================================
+   THEME CONFIGURATION
+   ========================================= */
+:root {
+  /* PRIMARY COLORS */
+  --primary-red: #ff0000; /* Bright Red for HACK / Buttons */
+  --primary-orange: #ff8800; /* Orange for gradients */
+  --accent-gold: #ffd700; /* Gold for trophies/prizes */
+
+  /* BACKGROUNDS */
+  --bg-dark: #000000;           /* Pitch Black */
+  --bg-card: #050505;           /* Almost Black for cards */
+  --bg-card-border: #151515;    /* Very subtle border */
+  
+  /* TEXT */
+  --text-main: #FFFFFF;         /* Headings */
+  --text-muted: #888888;        /* Muted text for better contrast against black */
+
+  /* GLOW EFFECTS */
+  --glow-red: rgba(255, 0, 0, 0.6);
+  --glow-orange: rgba(255, 136, 0, 0.6);
+  --glow-gold: rgba(255, 215, 0, 0.5);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+  }
+
+  body {
+    @apply bg-background-dark text-slate-100 font-display min-h-screen overflow-x-hidden selection:bg-primary selection:text-white;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #221310;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3f221d;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f2330d;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(34, 19, 16, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(242, 51, 13, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(47, 27, 24, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-card:hover {
+    @apply border-primary/30;
+  }
+
+  /* Utility for hiding scrollbar but keeping functionality */
+  .scroll-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
