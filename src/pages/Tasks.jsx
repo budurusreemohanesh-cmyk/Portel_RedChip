@@ -61,7 +61,7 @@ const Tasks = () => {
   };
 
   return (
-    <div className="p-6 lg:p-8 max-w-full space-y-8 h-[calc(100vh-4rem)] flex flex-col">
+    <div className="p-4 lg:p-8 max-w-full space-y-6 lg:space-y-8 min-h-[calc(100vh-4rem)] lg:h-[calc(100vh-4rem)] flex flex-col">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -92,15 +92,15 @@ const Tasks = () => {
       </motion.div>
 
       {/* Kanban Board */}
-      <div className="flex-1 overflow-x-auto pb-4 scroll-hide">
-        <div className="flex gap-6 h-full min-w-max">
+      <div className="flex-1 overflow-x-auto lg:pb-4 scroll-hide h-full">
+        <div className="flex flex-col lg:flex-row gap-6 h-full min-w-full lg:min-w-max">
         {columns.map((column, columnIndex) => (
           <motion.div
             key={column.id}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: columnIndex * 0.1 }}
-            className="w-[350px] flex flex-col h-full bg-surface-dark/30 backdrop-blur-sm rounded-xl border border-white/5 p-4"
+            className="w-full lg:w-[350px] flex flex-col h-auto lg:h-full bg-surface-dark/30 backdrop-blur-sm rounded-xl border border-white/5 p-4 shrink-0"
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, column.id)}
           >

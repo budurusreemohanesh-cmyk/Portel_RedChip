@@ -76,9 +76,9 @@ const Leaderboard = () => {
         className="relative py-10"
       >
          {/* Background Glow */}
-         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] bg-primary/10 rounded-full blur-[80px] md:blur-[100px] -z-10"></div>
 
-        <div className="flex justify-center items-end gap-4 md:gap-8 min-h-[300px]">
+        <div className="flex justify-center items-end gap-2 md:gap-8 min-h-[250px] md:min-h-[300px]">
           {/* 2nd Place */}
           {topThree.find((t) => t.rank === 2) && (
             <motion.div
@@ -87,27 +87,27 @@ const Leaderboard = () => {
               transition={{ delay: 0.2 }}
               className="flex flex-col items-center group relative z-10"
             >
-              <div className="relative mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-slate-300 shadow-[0_0_20px_rgba(203,213,225,0.3)] group-hover:scale-105 transition-transform duration-300">
+              <div className="relative mb-4 md:mb-6">
+                <div className="w-16 h-16 md:w-28 md:h-28 rounded-full overflow-hidden border-2 md:border-4 border-slate-300 shadow-[0_0_20px_rgba(203,213,225,0.3)] group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={topThree.find((t) => t.rank === 2).avatar}
                     alt="2nd place"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-slate-300 rounded-full flex items-center justify-center text-background-dark font-black text-lg shadow-lg border-2 border-background-dark transform rotate-3">
+                <div className="absolute -bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 w-6 h-6 md:w-8 md:h-8 bg-slate-300 rounded-full flex items-center justify-center text-background-dark font-black text-xs md:text-lg shadow-lg border-2 border-background-dark transform rotate-3">
                   2
                 </div>
               </div>
-              <div className="glass-card p-5 text-center w-40 md:w-48 bg-slate-300/10 border-slate-300/20 card-hover">
-                <h3 className="font-bold text-white mb-1 truncate px-2">
+              <div className="glass-card p-3 md:p-5 text-center w-28 md:w-48 bg-slate-300/10 border-slate-300/20 card-hover">
+                <h3 className="font-bold text-white mb-1 truncate px-2 text-xs md:text-base">
                   {topThree.find((t) => t.rank === 2).team}
                 </h3>
-                <p className="text-slate-300 text-sm font-mono">
+                <p className="text-slate-300 text-[10px] md:text-sm font-mono">
                   {topThree.find((t) => t.rank === 2).points} PTS
                 </p>
               </div>
-              <div className="h-24 w-full bg-slate-300/20 mt-4 rounded-t-lg backdrop-blur-md border-x border-t border-slate-300/10 mx-auto w-32"></div>
+              <div className="h-16 md:h-24 w-full bg-slate-300/20 mt-2 md:mt-4 rounded-t-lg backdrop-blur-md border-x border-t border-slate-300/10 mx-auto w-20 md:w-32"></div>
             </motion.div>
           )}
 
@@ -117,32 +117,32 @@ const Leaderboard = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="flex flex-col items-center group relative z-20 -mt-12"
+              className="flex flex-col items-center group relative z-20 -mt-8 md:-mt-12"
             >
-               <div className="absolute -top-16 text-yellow-500 animate-bounce">
-                  <span className="material-icons text-4xl shadow-glow">emoji_events</span>
+               <div className="absolute -top-12 md:-top-16 text-yellow-500 animate-bounce">
+                  <span className="material-icons text-2xl md:text-4xl shadow-glow">emoji_events</span>
                </div>
-              <div className="relative mb-6">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-yellow-500 shadow-[0_0_30px_rgba(234,179,8,0.5)] group-hover:scale-105 transition-transform duration-300 ring-4 ring-yellow-500/20">
+              <div className="relative mb-4 md:mb-6">
+                <div className="w-24 h-24 md:w-40 md:h-40 rounded-full overflow-hidden border-2 md:border-4 border-yellow-500 shadow-[0_0_30px_rgba(234,179,8,0.5)] group-hover:scale-105 transition-transform duration-300 ring-4 ring-yellow-500/20">
                   <img
                     src={topThree.find((t) => t.rank === 1).avatar}
                     alt="1st place"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-background-dark font-black text-2xl shadow-xl border-4 border-background-dark">
+                <div className="absolute -bottom-4 md:-bottom-5 left-1/2 -translate-x-1/2 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-background-dark font-black text-sm md:text-2xl shadow-xl border-4 border-background-dark">
                   1
                 </div>
               </div>
-              <div className="glass-card p-6 text-center w-48 md:w-56 bg-gradient-to-b from-yellow-500/10 to-transparent border-yellow-500/30 card-hover shadow-[0_0_30px_rgba(234,179,8,0.1)]">
-                <h3 className="text-xl font-bold text-white mb-1 truncate px-2">
+              <div className="glass-card p-4 md:p-6 text-center w-36 md:w-56 bg-gradient-to-b from-yellow-500/10 to-transparent border-yellow-500/30 card-hover shadow-[0_0_30px_rgba(234,179,8,0.1)]">
+                <h3 className="text-sm md:text-xl font-bold text-white mb-1 truncate px-2">
                   {topThree.find((t) => t.rank === 1).team}
                 </h3>
-                <p className="text-yellow-400 font-bold font-mono text-lg">
+                <p className="text-yellow-400 font-bold font-mono text-xs md:text-lg">
                   {topThree.find((t) => t.rank === 1).points} PTS
                 </p>
               </div>
-              <div className="h-32 w-full bg-yellow-500/20 mt-4 rounded-t-lg backdrop-blur-md border-x border-t border-yellow-500/20 mx-auto w-40 relative overflow-hidden">
+              <div className="h-24 md:h-32 w-full bg-yellow-500/20 mt-2 md:mt-4 rounded-t-lg backdrop-blur-md border-x border-t border-yellow-500/20 mx-auto w-28 md:w-40 relative overflow-hidden">
                  <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 to-transparent"></div>
               </div>
             </motion.div>
@@ -156,27 +156,27 @@ const Leaderboard = () => {
               transition={{ delay: 0.3 }}
               className="flex flex-col items-center group relative z-10"
             >
-              <div className="relative mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-orange-700 shadow-[0_0_20px_rgba(194,65,12,0.3)] group-hover:scale-105 transition-transform duration-300">
+              <div className="relative mb-4 md:mb-6">
+                <div className="w-16 h-16 md:w-28 md:h-28 rounded-full overflow-hidden border-2 md:border-4 border-orange-700 shadow-[0_0_20px_rgba(194,65,12,0.3)] group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={topThree.find((t) => t.rank === 3).avatar}
                     alt="3rd place"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-orange-700 rounded-full flex items-center justify-center text-white font-black text-lg shadow-lg border-2 border-background-dark transform -rotate-3">
+                <div className="absolute -bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 w-6 h-6 md:w-8 md:h-8 bg-orange-700 rounded-full flex items-center justify-center text-white font-black text-xs md:text-lg shadow-lg border-2 border-background-dark transform -rotate-3">
                   3
                 </div>
               </div>
-              <div className="glass-card p-5 text-center w-40 md:w-48 bg-orange-700/10 border-orange-700/20 card-hover">
-                <h3 className="font-bold text-white mb-1 truncate px-2">
+              <div className="glass-card p-3 md:p-5 text-center w-28 md:w-48 bg-orange-700/10 border-orange-700/20 card-hover">
+                <h3 className="font-bold text-white mb-1 truncate px-2 text-xs md:text-base">
                   {topThree.find((t) => t.rank === 3).team}
                 </h3>
-                <p className="text-orange-400 text-sm font-mono">
+                <p className="text-orange-400 text-[10px] md:text-sm font-mono">
                   {topThree.find((t) => t.rank === 3).points} PTS
                 </p>
               </div>
-              <div className="h-16 w-full bg-orange-700/20 mt-4 rounded-t-lg backdrop-blur-md border-x border-t border-orange-700/10 mx-auto w-32"></div>
+              <div className="h-12 md:h-16 w-full bg-orange-700/20 mt-2 md:mt-4 rounded-t-lg backdrop-blur-md border-x border-t border-orange-700/10 mx-auto w-20 md:w-32"></div>
             </motion.div>
           )}
         </div>
@@ -193,19 +193,19 @@ const Leaderboard = () => {
           <table className="w-full">
             <thead>
               <tr className="border-b border-white/5 bg-white/5">
-                <th className="text-left py-4 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                <th className="text-left py-4 px-4 md:px-6 text-xs font-bold text-slate-400 uppercase tracking-wider">
                   Rank
                 </th>
-                <th className="text-left py-4 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                <th className="text-left py-4 px-4 md:px-6 text-xs font-bold text-slate-400 uppercase tracking-wider">
                   Team Name
                 </th>
-                <th className="text-left py-4 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                <th className="text-left py-4 px-4 md:px-6 text-xs font-bold text-slate-400 uppercase tracking-wider">
                   Points
                 </th>
-                <th className="text-left py-4 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider text-center">
+                <th className="text-left py-4 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider text-center hidden md:table-cell">
                   Progress
                 </th>
-                <th className="text-left py-4 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">
+                <th className="text-left py-4 px-6 text-xs font-bold text-slate-400 uppercase tracking-wider text-right hidden md:table-cell">
                   Trend
                 </th>
               </tr>
@@ -248,7 +248,7 @@ const Leaderboard = () => {
                       {team.points}
                     </span>
                   </td>
-                  <td className="py-4 px-6">
+                  <td className="py-4 px-6 hidden md:table-cell">
                      <div className="w-full max-w-[140px] mx-auto">
                         <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                            <div
@@ -260,7 +260,7 @@ const Leaderboard = () => {
                         </div>
                      </div>
                   </td>
-                  <td className="py-4 px-6 text-right">
+                  <td className="py-4 px-6 text-right hidden md:table-cell">
                     <div className="flex items-center justify-end gap-1">
                       {getTrendIcon(team.trend)}
                       {getTrendValue(team.trend)}
